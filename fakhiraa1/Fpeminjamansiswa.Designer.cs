@@ -38,13 +38,13 @@ namespace fakhiraa1
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtdenda = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtjudul = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtcari = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtdenda = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -189,6 +189,38 @@ namespace fakhiraa1
             this.panel1.Size = new System.Drawing.Size(1008, 252);
             this.panel1.TabIndex = 140;
             // 
+            // txtdenda
+            // 
+            this.txtdenda.BorderRadius = 15;
+            this.txtdenda.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtdenda.DefaultText = "";
+            this.txtdenda.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtdenda.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtdenda.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtdenda.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtdenda.Enabled = false;
+            this.txtdenda.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtdenda.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtdenda.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtdenda.Location = new System.Drawing.Point(568, 31);
+            this.txtdenda.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtdenda.Name = "txtdenda";
+            this.txtdenda.PlaceholderText = "";
+            this.txtdenda.SelectedText = "";
+            this.txtdenda.Size = new System.Drawing.Size(202, 43);
+            this.txtdenda.TabIndex = 124;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
+            this.label4.Location = new System.Drawing.Point(418, 38);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 26);
+            this.label4.TabIndex = 125;
+            this.label4.Text = "denda";
+            // 
             // txtjudul
             // 
             this.txtjudul.BorderRadius = 15;
@@ -252,6 +284,7 @@ namespace fakhiraa1
             this.label2.Size = new System.Drawing.Size(57, 26);
             this.label2.TabIndex = 132;
             this.label2.Text = "Cari";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dataGridView1
             // 
@@ -270,38 +303,6 @@ namespace fakhiraa1
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1266, 277);
             this.dataGridView1.TabIndex = 143;
-            // 
-            // txtdenda
-            // 
-            this.txtdenda.BorderRadius = 15;
-            this.txtdenda.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtdenda.DefaultText = "";
-            this.txtdenda.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtdenda.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtdenda.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtdenda.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtdenda.Enabled = false;
-            this.txtdenda.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtdenda.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtdenda.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtdenda.Location = new System.Drawing.Point(568, 31);
-            this.txtdenda.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.txtdenda.Name = "txtdenda";
-            this.txtdenda.PlaceholderText = "";
-            this.txtdenda.SelectedText = "";
-            this.txtdenda.Size = new System.Drawing.Size(202, 43);
-            this.txtdenda.TabIndex = 124;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
-            this.label4.Location = new System.Drawing.Point(418, 38);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 26);
-            this.label4.TabIndex = 125;
-            this.label4.Text = "denda";
             // 
             // Column1
             // 
