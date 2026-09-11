@@ -6,7 +6,7 @@ namespace fakhiraa1
 {
     public partial class Fprofil : Form
     {
-        // Ganti dengan NISN / Username siswa yang sedang login
+      
         private string nisnSiswa = "12345";
 
         public Fprofil()
@@ -20,7 +20,7 @@ namespace fakhiraa1
             tampilProfilSiswa();
         }
 
-        // 1. KUNCI TEXTBOX DATA DIRI
+        
         private void kunciDataDiri()
         {
             txtnisn.Enabled = false;
@@ -31,7 +31,7 @@ namespace fakhiraa1
             txtalamat.Enabled = false;
         }
 
-        // 2. AMBIL DATA SISWA DARI DATABASE
+       
         public void tampilProfilSiswa()
         {
             string query = $"SELECT * FROM t_anggota WHERE nisn = '{nisnSiswa}' OR id_anggota = '{nisnSiswa}'";
@@ -44,7 +44,7 @@ namespace fakhiraa1
                 txtnisn.Text = baris["nisn"].ToString();
                 txtnama.Text = baris["nama"].ToString();
 
-                // Jika kolom di tabel kamu bernama kelas / jenis_kelamin
+               
                 if (baris.Table.Columns.Contains("kelas"))
                     txtkelas.Text = baris["kelas"].ToString();
 
@@ -59,7 +59,6 @@ namespace fakhiraa1
             }
         }
 
-        // 3. FUNGSI UBAH PASSWORD
         private void btnsimpan_Click(object sender, EventArgs e)
         {
             string passLama = txtpasslama.Text.Trim();
@@ -71,13 +70,13 @@ namespace fakhiraa1
                 return;
             }
 
-            // Cek apakah password lama benar
+           
             string queryCek = $"SELECT * FROM t_anggota WHERE (nisn = '{nisnSiswa}' OR id_anggota = '{nisnSiswa}') AND password = '{passLama}'";
             db.crud(queryCek);
 
             if (db.ds != null && db.ds.Tables.Count > 0 && db.ds.Tables[0].Rows.Count > 0)
             {
-                // Update ke password baru
+               
                 string queryUpdate = $"UPDATE t_anggota SET password = '{passBaru}' WHERE nisn = '{nisnSiswa}' OR id_anggota = '{nisnSiswa}'";
                 db.crud(queryUpdate);
 
@@ -90,6 +89,11 @@ namespace fakhiraa1
             {
                 MessageBox.Show("Password lama salah!", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

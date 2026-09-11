@@ -6,32 +6,27 @@ namespace fakhiraa1
 {
     public partial class Fdenda : Form
     {
-        // Flag penahan event agar tidak otomatis mereset pilihan ComboBox
         private bool isUpdating = false;
 
         public Fdenda()
         {
             InitializeComponent();
 
-            // =====================================================
-            // EVENT
-            // =====================================================
+          
             cmbkd.SelectedIndexChanged += cmbkd_SelectedIndexChanged;
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.DataError += DataGridView1_DataError;
 
-            // =====================================================
-            // SET PROPERTIES
-            // =====================================================
+            
             txtterlambat.ReadOnly = true;
             txtdenda.ReadOnly = true;
 
-            // Pilihan Status Pembayaran
+           
             cmbstatus.Items.Clear();
             cmbstatus.Items.Add("belum");
             cmbstatus.Items.Add("lunas");
 
-            // Load Awal
+           
             isiComboPinjam();
             tampildata();
             bersih();
@@ -42,9 +37,7 @@ namespace fakhiraa1
             e.ThrowException = false;
         }
 
-        // =========================================================
-        // BERSIH
-        // =========================================================
+        
         public void bersih()
         {
             isUpdating = true; // Kunci event
@@ -65,12 +58,10 @@ namespace fakhiraa1
             txtterlambat.ReadOnly = true;
             txtdenda.ReadOnly = true;
 
-            isUpdating = false; // Buka kunci event
+            isUpdating = false; 
         }
 
-        // =========================================================
-        // ISI COMBO KODE PINJAM
-        // =========================================================
+       
         public void isiComboPinjam()
         {
             string query = @"
@@ -104,9 +95,7 @@ namespace fakhiraa1
             }
         }
 
-        // =========================================================
-        // KODE PINJAM DIPILIH
-        // =========================================================
+
         private void cmbkd_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Jangan jalankan jika sedang proses memilih data dari DataGridView untuk Update
@@ -129,8 +118,6 @@ namespace fakhiraa1
 
                 txtterlambat.Text = data["terlambat"].ToString();
                 txtdenda.Text = data["denda"].ToString();
-
-                // Set default status "belum" HANYA jika sedang menginput data baru (label2 kosong)
                 if (string.IsNullOrEmpty(label2.Text))
                 {
                     cmbstatus.SelectedItem = "belum";
@@ -143,9 +130,6 @@ namespace fakhiraa1
             }
         }
 
-        // =========================================================
-        // TAMPIL DATA
-        // =========================================================
         public void tampildata()
         {
             dataGridView1.Rows.Clear();
@@ -185,9 +169,7 @@ namespace fakhiraa1
             }
         }
 
-        // =========================================================
-        // SIMPAN
-        // =========================================================
+      
         private void btnsimpan_Click(object sender, EventArgs e)
         {
             if (cmbkd.SelectedValue == null || cmbkd.SelectedIndex == -1)
@@ -227,9 +209,7 @@ namespace fakhiraa1
             bersih();
         }
 
-        // =========================================================
-        // UPDATE (FIXED STATUS PERMANEN)
-        // =========================================================
+        
         private void btnupdate_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(label2.Text))
@@ -246,10 +226,9 @@ namespace fakhiraa1
 
             string idDenda = label2.Text;
 
-            // Mengambil nilai status teks langsung dan diseragamkan ke huruf kecil
             string statusBayar = cmbstatus.Text.Trim().ToLower();
 
-            // Eksekusi Update Ke Database
+        
             db.crud("UPDATE t_denda SET status_bayar = '" + statusBayar + "' WHERE id_denda = '" + idDenda + "'");
 
             MessageBox.Show("Data denda berhasil di-update menjadi: " + statusBayar, "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -258,9 +237,7 @@ namespace fakhiraa1
             bersih();
         }
 
-        // =========================================================
-        // CLICK DATAGRIDVIEW
-        // =========================================================
+       
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
@@ -285,14 +262,14 @@ namespace fakhiraa1
             string idDenda = data["id_denda"].ToString();
             string idPinjam = data["id_pinjam"].ToString();
 
-            // KLIK IKON UPDATE (KOLOM INDEX 4)
+            
             if (kolom == 4)
             {
-                isUpdating = true; // Kunci event listener sementara
+                isUpdating = true; 
 
                 label2.Text = idDenda;
 
-                // Tampilkan Kode Pinjam di Combo
+              
                 DataTable dt = new DataTable();
                 dt.Columns.Add("id_pinjam");
                 dt.Columns.Add("kode_pinjam");
@@ -303,25 +280,25 @@ namespace fakhiraa1
                 cmbkd.ValueMember = "id_pinjam";
                 cmbkd.SelectedValue = idPinjam;
 
-                // Isi data
+            
                 txtterlambat.Text = data["terlambat"].ToString();
                 txtdenda.Text = data["jumlah_denda"].ToString();
 
-                // SET STATUS DARI DATABASE KE COMBOBOX
+              
                 string status = data["status_bayar"].ToString().ToLower();
                 cmbstatus.Text = status;
 
-                // Nonaktifkan field yang tidak boleh diubah saat update
+                
                 cmbkd.Enabled = false;
                 txtterlambat.ReadOnly = true;
                 txtdenda.ReadOnly = true;
                 cmbstatus.Enabled = true;
 
-                isUpdating = false; // Lepas kunci
+                isUpdating = false; 
                 return;
             }
 
-            // KLIK IKON HAPUS (KOLOM INDEX 5)
+          
             if (kolom == 5)
             {
                 DialogResult hasil = MessageBox.Show(

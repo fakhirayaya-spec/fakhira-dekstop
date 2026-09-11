@@ -66,11 +66,11 @@ namespace fakhiraa1
        
         public void bersih()
         {
-            // Kode baru otomatis
+            
             txtkodpin.Text =
                 generateKodePinjam();
 
-            // Tanggal pinjam hari ini
+           
             dtppinjam.MinDate =
                 DateTime.Today;
 
@@ -80,7 +80,7 @@ namespace fakhiraa1
             dtppinjam.Value =
                 DateTime.Today;
 
-            // Jatuh tempo 7 hari
+           
             dtptempo.Value =
                 DateTime.Today.AddDays(7);
 
@@ -345,7 +345,6 @@ namespace fakhiraa1
             }
 
 
-            // Status tidak diubah saat edit
             string ss =
                 statusLama;
 
@@ -491,27 +490,27 @@ namespace fakhiraa1
 
                 foreach (DataRow b in db.ds.Tables[0].Rows)
                 {
-                    // ID hanya untuk kebutuhan program
+                   
                     label2.Text =
                         b["id_pinjam"].ToString();
 
 
-                    // Kode yang ditampilkan
+                   
                     txtkodpin.Text =
                         b["kode_pinjam"].ToString();
 
 
-                    // Anggota
+                   
                     cmbanggota.SelectedValue =
                         b["id_anggota"].ToString();
 
 
-                    // Buku
+                   
                     cmbbuku.SelectedValue =
                         b["id_buku"].ToString();
 
 
-                    // Tanggal pinjam
+                   
                     if (
                         b["tanggal_pinjam"] != DBNull.Value
                     )
@@ -532,7 +531,7 @@ namespace fakhiraa1
                     }
 
 
-                    // Jatuh tempo
+                    
                     if (
                         b["tanggal_jatuh_tempo"] != DBNull.Value
                     )

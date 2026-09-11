@@ -10,15 +10,11 @@ namespace fakhiraa1
         {
             InitializeComponent();
 
-            // =====================================================
-            // EVENT
-            // =====================================================
+            
             cmbkd.SelectedIndexChanged += cmbkd_SelectedIndexChanged;
             dtpkembali.ValueChanged += dtpkembali_ValueChanged;
 
-            // =====================================================
-            // TERLAMBAT DAN DENDA TIDAK BISA DIINPUT MANUAL
-            // =====================================================
+            
             txtterlambat.ReadOnly = true;
             txtdenda.ReadOnly = true;
 
@@ -28,9 +24,7 @@ namespace fakhiraa1
         }
 
 
-        // =========================================================
-        // BERSIH
-        // =========================================================
+   
         public void bersih()
         {
             label2.Text = "";
@@ -45,13 +39,6 @@ namespace fakhiraa1
         }
 
 
-        // =========================================================
-        // ISI COMBO KODE PINJAM
-        // HANYA PEMINJAMAN YANG MASIH DIPINJAM
-        //
-        // Yang ditampilkan : kode_pinjam
-        // Yang disimpan     : id_pinjam
-        // =========================================================
         public void isiComboPinjam(string idPinjamEdit = "")
         {
             string query = "";
@@ -86,11 +73,11 @@ namespace fakhiraa1
                 cmbkd.DataSource =
                     db.ds.Tables[0];
 
-                // Yang terlihat di ComboBox
+                
                 cmbkd.DisplayMember =
                     "kode_pinjam";
 
-                // Yang dipakai sebagai value
+                
                 cmbkd.ValueMember =
                     "id_pinjam";
 
@@ -103,9 +90,6 @@ namespace fakhiraa1
         }
 
 
-        // =========================================================
-        // KETIKA KODE PINJAM DIPILIH
-        // =========================================================
         private void cmbkd_SelectedIndexChanged(
             object sender,
             EventArgs e)
@@ -123,9 +107,7 @@ namespace fakhiraa1
                 cmbkd.SelectedValue.ToString();
 
 
-            // =====================================================
-            // AMBIL TANGGAL PINJAM DAN JATUH TEMPO
-            // =====================================================
+            
             db.crud(
                 $"SELECT tanggal_pinjam, " +
                 $"tanggal_jatuh_tempo " +
@@ -143,9 +125,6 @@ namespace fakhiraa1
                     db.ds.Tables[0].Rows[0];
 
 
-                // =================================================
-                // TANGGAL PINJAM
-                // =================================================
                 if (
                     baris["tanggal_pinjam"] !=
                     DBNull.Value
@@ -158,24 +137,16 @@ namespace fakhiraa1
                 }
 
 
-                // =================================================
-                // TANGGAL KEMBALI DEFAULT HARI INI
-                // =================================================
+               
                 dtpkembali.Value =
                     DateTime.Today;
 
 
-                // =================================================
-                // HITUNG OTOMATIS
-                // =================================================
                 hitungTerlambatDanDenda();
             }
         }
 
 
-        // =========================================================
-        // KETIKA TANGGAL KEMBALI DIUBAH
-        // =========================================================
         private void dtpkembali_ValueChanged(
             object sender,
             EventArgs e)
@@ -184,9 +155,7 @@ namespace fakhiraa1
         }
 
 
-        // =========================================================
-        // HITUNG TERLAMBAT DAN DENDA OTOMATIS
-        // =========================================================
+      
         private void hitungTerlambatDanDenda()
         {
             if (
@@ -212,9 +181,7 @@ namespace fakhiraa1
                 cmbkd.SelectedValue.ToString();
 
 
-            // =====================================================
-            // AMBIL TANGGAL JATUH TEMPO
-            // =====================================================
+          
             db.crud(
                 $"SELECT tanggal_jatuh_tempo " +
                 $"FROM t_peminjaman " +
@@ -248,25 +215,18 @@ namespace fakhiraa1
             }
 
 
-            // =====================================================
-            // TANGGAL JATUH TEMPO
-            // =====================================================
+         
             DateTime tanggalJatuhTempo =
                 Convert.ToDateTime(
                     baris["tanggal_jatuh_tempo"]
                 ).Date;
 
 
-            // =====================================================
-            // TANGGAL KEMBALI
-            // =====================================================
+      
             DateTime tanggalKembali =
                 dtpkembali.Value.Date;
 
 
-            // =====================================================
-            // HITUNG JUMLAH HARI TERLAMBAT
-            // =====================================================
             int jumlahHariTerlambat =
                 (
                     tanggalKembali -
@@ -274,9 +234,7 @@ namespace fakhiraa1
                 ).Days;
 
 
-            // =====================================================
-            // TIDAK TERLAMBAT
-            // =====================================================
+      
             if (jumlahHariTerlambat <= 0)
             {
                 txtterlambat.Text = "0";
@@ -284,16 +242,11 @@ namespace fakhiraa1
             }
             else
             {
-                // =================================================
-                // TERLAMBAT
-                // =================================================
+            
                 txtterlambat.Text =
                     jumlahHariTerlambat.ToString();
 
 
-                // =================================================
-                // DENDA Rp2.000 / HARI
-                // =================================================
                 int denda =
                     jumlahHariTerlambat * 2000;
 
@@ -304,9 +257,7 @@ namespace fakhiraa1
         }
 
 
-        // =========================================================
-        // TENTUKAN STATUS OTOMATIS
-        // =========================================================
+        
         private string tentukanStatus()
         {
             int jumlahTerlambat = 0;
@@ -325,9 +276,7 @@ namespace fakhiraa1
             );
 
 
-            // =====================================================
-            // TIDAK ADA DENDA
-            // =====================================================
+            
             if (
                 jumlahTerlambat == 0 &&
                 jumlahDenda == 0
@@ -337,16 +286,11 @@ namespace fakhiraa1
             }
 
 
-            // =====================================================
-            // ADA DENDA
-            // =====================================================
+            
             return "terlambat";
         }
 
 
-        // =========================================================
-        // TAMPIL DATA
-        // =========================================================
         public void tampildata()
         {
             dataGridView1.Rows.Clear();
@@ -409,9 +353,7 @@ namespace fakhiraa1
                         baris["status"].ToString();
 
 
-                    // =================================================
-                    // SESUAIKAN DENGAN KOLOM GRID
-                    // =================================================
+                   
                     dataGridView1.Rows.Add(
                         kodepinjam,
                         tglkembali,
@@ -424,16 +366,11 @@ namespace fakhiraa1
         }
 
 
-        // =========================================================
-        // SIMPAN
-        // =========================================================
         private void btnsimpan_Click(
             object sender,
             EventArgs e)
         {
-            // =====================================================
-            // CEK KODE PINJAM
-            // =====================================================
+           
             if (
                 cmbkd.SelectedValue == null ||
                 cmbkd.SelectedIndex == -1
@@ -446,16 +383,13 @@ namespace fakhiraa1
             }
 
 
-            // =====================================================
-            // ID PINJAM DIAMBIL OTOMATIS DARI KODE PINJAM
-            // =====================================================
+           
+           
             string idpinjam =
                 cmbkd.SelectedValue.ToString();
 
 
-            // =====================================================
-            // HITUNG ULANG OTOMATIS
-            // =====================================================
+         
             hitungTerlambatDanDenda();
 
 
@@ -483,9 +417,7 @@ namespace fakhiraa1
                 jumlahDenda.ToString();
 
 
-            // =====================================================
-            // STATUS OTOMATIS
-            // =====================================================
+         
             string status =
                 tentukanStatus();
 
@@ -496,9 +428,7 @@ namespace fakhiraa1
                 );
 
 
-            // =====================================================
-            // CEK SUDAH PERNAH DIKEMBALIKAN ATAU BELUM
-            // =====================================================
+         
             db.crud(
                 $"SELECT id_kembali " +
                 $"FROM t_pengembalian " +
@@ -518,9 +448,7 @@ namespace fakhiraa1
             }
 
 
-            // =====================================================
-            // SIMPAN DATA PENGEMBALIAN
-            // =====================================================
+          
             db.crud(
                 $"INSERT INTO t_pengembalian " +
                 $"(id_pinjam, tanggal_kembali, terlambat, denda, status) " +
@@ -530,9 +458,6 @@ namespace fakhiraa1
             );
 
 
-            // =====================================================
-            // AMBIL ID BUKU
-            // =====================================================
             string idbuku = "";
 
 
@@ -555,9 +480,7 @@ namespace fakhiraa1
             }
 
 
-            // =====================================================
-            // UPDATE STATUS PEMINJAMAN
-            // =====================================================
+           
             if (status == "dikembalikan")
             {
                 db.crud(
@@ -576,9 +499,7 @@ namespace fakhiraa1
             }
 
 
-            // =====================================================
-            // STOK BUKU +1
-            // =====================================================
+           
             if (idbuku != "")
             {
                 db.crud(
@@ -594,18 +515,14 @@ namespace fakhiraa1
             );
 
 
-            // =====================================================
-            // REFRESH
-            // =====================================================
+           
             isiComboPinjam();
             tampildata();
             bersih();
         }
 
 
-        // =========================================================
-        // UPDATE
-        // =========================================================
+        
         private void btnupdate_Click(
             object sender,
             EventArgs e)
@@ -639,9 +556,6 @@ namespace fakhiraa1
                 cmbkd.SelectedValue.ToString();
 
 
-            // =====================================================
-            // HITUNG ULANG OTOMATIS
-            // =====================================================
             hitungTerlambatDanDenda();
 
 
@@ -669,9 +583,7 @@ namespace fakhiraa1
                 jumlahDenda.ToString();
 
 
-            // =====================================================
-            // STATUS OTOMATIS
-            // =====================================================
+         
             string status =
                 tentukanStatus();
 
@@ -682,9 +594,7 @@ namespace fakhiraa1
                 );
 
 
-            // =====================================================
-            // UPDATE PENGEMBALIAN
-            // =====================================================
+           
             db.crud(
                 $"UPDATE t_pengembalian SET " +
                 $"id_pinjam = '{idpinjam}', " +
@@ -696,9 +606,8 @@ namespace fakhiraa1
             );
 
 
-            // =====================================================
-            // UPDATE STATUS PEMINJAMAN
-            // =====================================================
+            
+        
             if (status == "dikembalikan")
             {
                 db.crud(
@@ -717,9 +626,6 @@ namespace fakhiraa1
             }
 
 
-            // =====================================================
-            // REFRESH
-            // =====================================================
             isiComboPinjam();
             tampildata();
             bersih();
@@ -731,9 +637,7 @@ namespace fakhiraa1
         }
 
 
-        // =========================================================
-        // CLICK DATA GRID VIEW
-        // =========================================================
+       
         private void dataGridView1_CellClick(
             object sender,
             DataGridViewCellEventArgs e)
@@ -760,9 +664,7 @@ namespace fakhiraa1
             }
 
 
-            // =====================================================
-            // AMBIL KODE PINJAM DARI GRID
-            // =====================================================
+         
             string kodepinjam =
                 dataGridView1.Rows[baris]
                 .Cells[0]
@@ -777,9 +679,7 @@ namespace fakhiraa1
                 .ToString();
 
 
-            // =====================================================
-            // AMBIL DATA BERDASARKAN KODE PINJAM
-            // =====================================================
+      
             db.crud(
                 $"SELECT p.id_kembali, " +
                 $"p.id_pinjam, " +
@@ -802,10 +702,7 @@ namespace fakhiraa1
                     db.ds.Tables[0].Rows[0];
 
 
-                // =================================================
-                // ID KEMBALI
-                // Tetap disimpan di label untuk proses update
-                // =================================================
+                
                 label2.Text =
                     data["id_kembali"].ToString();
 
@@ -814,9 +711,6 @@ namespace fakhiraa1
                     data["id_pinjam"].ToString();
 
 
-                // =================================================
-                // MASUKKAN KODE PINJAM KE COMBO
-                // =================================================
                 isiComboPinjam(
                     idPinjamEdit
                 );
@@ -826,9 +720,7 @@ namespace fakhiraa1
                     idPinjamEdit;
 
 
-                // =================================================
-                // TANGGAL PINJAM
-                // =================================================
+             
                 if (
                     data["tanggal_pinjam"] !=
                     DBNull.Value
@@ -842,9 +734,6 @@ namespace fakhiraa1
             }
 
 
-            // =====================================================
-            // TANGGAL KEMBALI
-            // =====================================================
             DateTime tanggal;
 
 
@@ -860,16 +749,11 @@ namespace fakhiraa1
             }
 
 
-            // =====================================================
-            // HITUNG TERLAMBAT DAN DENDA LAGI
-            // =====================================================
+         
             hitungTerlambatDanDenda();
 
 
-            // =====================================================
-            // HAPUS
-            // KOLOM 6
-            // =====================================================
+          
             if (kolom == 6)
             {
                 if (label2.Text == "")
@@ -903,9 +787,7 @@ namespace fakhiraa1
                         "";
 
 
-                    // =================================================
-                    // AMBIL ID PINJAM
-                    // =================================================
+                    
                     db.crud(
                         $"SELECT id_pinjam " +
                         $"FROM t_pengembalian " +
@@ -925,9 +807,8 @@ namespace fakhiraa1
                     }
 
 
-                    // =================================================
-                    // AMBIL ID BUKU
-                    // =================================================
+                  
+                 
                     string idbuku =
                         "";
 
@@ -954,18 +835,14 @@ namespace fakhiraa1
                     }
 
 
-                    // =================================================
-                    // HAPUS PENGEMBALIAN
-                    // =================================================
+                   
                     db.crud(
                         $"DELETE FROM t_pengembalian " +
                         $"WHERE id_kembali = '{idkembali}'"
                     );
 
 
-                    // =================================================
-                    // STATUS PEMINJAMAN KEMBALI DIPINJAM
-                    // =================================================
+                
                     if (idpinjam != "")
                     {
                         db.crud(
@@ -976,9 +853,7 @@ namespace fakhiraa1
                     }
 
 
-                    // =================================================
-                    // STOK DIKURANGI LAGI
-                    // =================================================
+                  
                     if (idbuku != "")
                     {
                         db.crud(
@@ -994,9 +869,7 @@ namespace fakhiraa1
                     );
 
 
-                    // =================================================
-                    // REFRESH
-                    // =================================================
+                  
                     isiComboPinjam();
 
                     tampildata();
@@ -1007,9 +880,7 @@ namespace fakhiraa1
         }
 
 
-        // =========================================================
-        // BUTTON TAMPIL
-        // =========================================================
+       
         private void btntampil_Click(
             object sender,
             EventArgs e)

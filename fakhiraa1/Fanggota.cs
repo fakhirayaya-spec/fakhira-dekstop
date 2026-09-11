@@ -17,7 +17,7 @@ namespace fakhiraa1
             InitializeComponent();
         }
 
-        // Method untuk mengisi ComboBox Nama khusus user yang id_role = 2
+        
         public void loadNamaAnggota()
         {
             db.crud("SELECT nama FROM tuser WHERE id_role = '2'");
@@ -61,23 +61,21 @@ namespace fakhiraa1
             }
         }
 
-        // Jalankan otomatis saat Form pertama kali dibuka
+        
         private void Fanggota_Load(object sender, EventArgs e)
         {
             txtid.Text = "2";
-            txtid.ReadOnly = true; // Mengunci TextBox agar tidak bisa diedit
+            txtid.ReadOnly = true; 
 
             loadNamaAnggota();
             tampildata();
         }
 
-        // Event saat ComboBox Nama diklik / dibuka
         private void cmbnama_DropDown(object sender, EventArgs e)
         {
             loadNamaAnggota();
         }
 
-        // Event saat ComboBox Jenis Kelamin diklik / dibuka
         private void cmbjk_DropDown(object sender, EventArgs e)
         {
             cmbjk.Items.Clear();
@@ -92,9 +90,9 @@ namespace fakhiraa1
 
         private void btnsimpan_Click(object sender, EventArgs e)
         {
-            string ids = "2"; // Selalu menyimpan nilai 2 ke database
+            string ids = "2"; 
             string nis = txtnis.Text;
-            string nm = cmbnama.Text; // Mengambil nama yang dipilih di ComboBox
+            string nm = cmbnama.Text; 
             string jk = cmbjk.Text;
             string kel = txtkelas.Text;
             string al = txtalamat.Text;

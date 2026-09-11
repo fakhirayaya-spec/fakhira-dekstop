@@ -60,6 +60,7 @@ namespace fakhiraa1
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btncetak = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -135,7 +136,7 @@ namespace fakhiraa1
             this.btntampil.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
             this.btntampil.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btntampil.ForeColor = System.Drawing.Color.White;
-            this.btntampil.Location = new System.Drawing.Point(814, 177);
+            this.btntampil.Location = new System.Drawing.Point(814, 166);
             this.btntampil.Name = "btntampil";
             this.btntampil.Size = new System.Drawing.Size(256, 45);
             this.btntampil.TabIndex = 123;
@@ -352,11 +353,28 @@ namespace fakhiraa1
             this.Column18.Name = "Column18";
             this.Column18.Width = 150;
             // 
+            // btncetak
+            // 
+            this.btncetak.BorderRadius = 15;
+            this.btncetak.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btncetak.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btncetak.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btncetak.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btncetak.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
+            this.btncetak.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btncetak.ForeColor = System.Drawing.Color.White;
+            this.btncetak.Location = new System.Drawing.Point(814, 234);
+            this.btncetak.Name = "btncetak";
+            this.btncetak.Size = new System.Drawing.Size(256, 45);
+            this.btncetak.TabIndex = 130;
+            this.btncetak.Text = "cetak laporan";
+            // 
             // Flaporan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 1050);
+            this.Controls.Add(this.btncetak);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dataGridView2);
@@ -414,5 +432,6 @@ namespace fakhiraa1
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
+        private Guna.UI2.WinForms.Guna2Button btncetak;
     }
 }

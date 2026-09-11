@@ -13,14 +13,14 @@ namespace fakhiraa1
 
         private void Fkatalogsis_Load(object sender, EventArgs e)
         {
-            // Matikan akses ketik ke semua textbox detail
+           
             kunciTextBoxDetail();
 
             tampilKategori();
             tampildata();
         }
 
-        // FUNGSI MENGUNCI TEXTBOX DETAIL
+       
         private void kunciTextBoxDetail()
         {
             txtjudul.Enabled = false;
@@ -31,7 +31,7 @@ namespace fakhiraa1
             txtdeskripsi.Enabled = false;
         }
 
-        // TAMPILKAN DAFTAR KATEGORI
+      
         public void tampilKategori()
         {
             cmbkategori.Items.Clear();
@@ -54,7 +54,7 @@ namespace fakhiraa1
             }
         }
 
-        // TAMPILKAN DATA BUKU DENGAN FILTER REAL-TIME
+        
         public void tampildata()
         {
             dataGridView1.Rows.Clear();
@@ -74,14 +74,14 @@ namespace fakhiraa1
                 LEFT JOIN t_kategori k ON b.id_kategori = k.id_kategori
                 WHERE 1=1";
 
-            // Filter Kategori
+            
             if (cmbkategori.SelectedIndex > 0 && cmbkategori.SelectedItem != null)
             {
                 string kat = cmbkategori.SelectedItem.ToString();
                 query += $" AND k.nama_kategori = '{kat}'";
             }
 
-            // Filter Pencarian (Setiap ketik 1 huruf langsung menyaring)
+           
             if (!string.IsNullOrWhiteSpace(txtcari.Text))
             {
                 string cari = txtcari.Text.Trim();
@@ -110,7 +110,7 @@ namespace fakhiraa1
             }
         }
 
-        // MENGISI TEXTBOX DETAIL
+       
         private void isiDetailBuku()
         {
             if (dataGridView1.CurrentRow != null && dataGridView1.CurrentRow.Tag != null)
@@ -126,10 +126,10 @@ namespace fakhiraa1
             }
         }
 
-        // EVENT HANDLERS
+       
         private void txtcari_TextChanged(object sender, EventArgs e)
         {
-            tampildata(); // Otomatis filter saat ngetik per-huruf
+            tampildata(); 
         }
 
         private void cmbkategori_SelectedIndexChanged(object sender, EventArgs e)
@@ -150,6 +150,11 @@ namespace fakhiraa1
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             isiDetailBuku();
+        }
+
+        private void btntampil_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

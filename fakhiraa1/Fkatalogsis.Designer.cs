@@ -217,6 +217,7 @@ namespace fakhiraa1
             this.btntampil.Size = new System.Drawing.Size(202, 45);
             this.btntampil.TabIndex = 128;
             this.btntampil.Text = "Tampil";
+            this.btntampil.Click += new System.EventHandler(this.btntampil_Click_1);
             // 
             // label7
             // 

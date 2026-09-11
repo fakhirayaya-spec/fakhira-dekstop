@@ -30,18 +30,8 @@ namespace fakhiraa1
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtalamat = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtnohp = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtjk = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtnama = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtnisn = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtkelas = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -53,6 +43,18 @@ namespace fakhiraa1
             this.label11 = new System.Windows.Forms.Label();
             this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtalamat = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtnohp = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtjk = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtnama = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtnisn = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
@@ -70,8 +72,6 @@ namespace fakhiraa1
             this.txtpasslama = new Guna.UI2.WinForms.Guna2TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.txtkelas = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -98,188 +98,37 @@ namespace fakhiraa1
             this.panel1.Size = new System.Drawing.Size(1008, 252);
             this.panel1.TabIndex = 130;
             // 
-            // txtalamat
+            // txtkelas
             // 
-            this.txtalamat.BorderRadius = 15;
-            this.txtalamat.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtalamat.DefaultText = "";
-            this.txtalamat.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtalamat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtalamat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtalamat.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtalamat.Enabled = false;
-            this.txtalamat.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtalamat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtalamat.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtalamat.Location = new System.Drawing.Point(570, 20);
-            this.txtalamat.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.txtalamat.Name = "txtalamat";
-            this.txtalamat.PlaceholderText = "";
-            this.txtalamat.SelectedText = "";
-            this.txtalamat.Size = new System.Drawing.Size(202, 43);
-            this.txtalamat.TabIndex = 124;
+            this.txtkelas.BorderRadius = 15;
+            this.txtkelas.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtkelas.DefaultText = "";
+            this.txtkelas.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtkelas.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtkelas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtkelas.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtkelas.Enabled = false;
+            this.txtkelas.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtkelas.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtkelas.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtkelas.Location = new System.Drawing.Point(573, 95);
+            this.txtkelas.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtkelas.Name = "txtkelas";
+            this.txtkelas.PlaceholderText = "";
+            this.txtkelas.SelectedText = "";
+            this.txtkelas.Size = new System.Drawing.Size(202, 43);
+            this.txtkelas.TabIndex = 132;
             // 
-            // label10
+            // label18
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
-            this.label10.Location = new System.Drawing.Point(436, 27);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 26);
-            this.label10.TabIndex = 125;
-            this.label10.Text = "Alamat";
-            // 
-            // txtnohp
-            // 
-            this.txtnohp.BorderRadius = 15;
-            this.txtnohp.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtnohp.DefaultText = "";
-            this.txtnohp.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtnohp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtnohp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtnohp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtnohp.Enabled = false;
-            this.txtnohp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnohp.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtnohp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnohp.Location = new System.Drawing.Point(170, 198);
-            this.txtnohp.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.txtnohp.Name = "txtnohp";
-            this.txtnohp.PlaceholderText = "";
-            this.txtnohp.SelectedText = "";
-            this.txtnohp.Size = new System.Drawing.Size(202, 43);
-            this.txtnohp.TabIndex = 122;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
-            this.label8.Location = new System.Drawing.Point(20, 205);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 26);
-            this.label8.TabIndex = 123;
-            this.label8.Text = "no telepon";
-            // 
-            // txtjk
-            // 
-            this.txtjk.BorderRadius = 15;
-            this.txtjk.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtjk.DefaultText = "";
-            this.txtjk.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtjk.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtjk.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtjk.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtjk.Enabled = false;
-            this.txtjk.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtjk.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtjk.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtjk.Location = new System.Drawing.Point(171, 140);
-            this.txtjk.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.txtjk.Name = "txtjk";
-            this.txtjk.PlaceholderText = "";
-            this.txtjk.SelectedText = "";
-            this.txtjk.Size = new System.Drawing.Size(202, 43);
-            this.txtjk.TabIndex = 120;
-            // 
-            // txtnama
-            // 
-            this.txtnama.BorderRadius = 15;
-            this.txtnama.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtnama.DefaultText = "";
-            this.txtnama.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtnama.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtnama.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtnama.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtnama.Enabled = false;
-            this.txtnama.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnama.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtnama.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnama.Location = new System.Drawing.Point(171, 80);
-            this.txtnama.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.txtnama.Name = "txtnama";
-            this.txtnama.PlaceholderText = "";
-            this.txtnama.SelectedText = "";
-            this.txtnama.Size = new System.Drawing.Size(202, 43);
-            this.txtnama.TabIndex = 120;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
-            this.label6.Location = new System.Drawing.Point(13, 84);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(157, 26);
-            this.label6.TabIndex = 121;
-            this.label6.Text = "Nama lengkap";
-            // 
-            // txtnisn
-            // 
-            this.txtnisn.BorderRadius = 15;
-            this.txtnisn.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtnisn.DefaultText = "";
-            this.txtnisn.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtnisn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtnisn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtnisn.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtnisn.Enabled = false;
-            this.txtnisn.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnisn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtnisn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnisn.Location = new System.Drawing.Point(171, 21);
-            this.txtnisn.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.txtnisn.Name = "txtnisn";
-            this.txtnisn.PlaceholderText = "";
-            this.txtnisn.SelectedText = "";
-            this.txtnisn.Size = new System.Drawing.Size(202, 43);
-            this.txtnisn.TabIndex = 119;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
-            this.label5.Location = new System.Drawing.Point(12, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 26);
-            this.label5.TabIndex = 119;
-            this.label5.Text = "NISN";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
-            this.label1.Location = new System.Drawing.Point(371, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 26);
-            this.label1.TabIndex = 137;
-            this.label1.Text = "PROFIL SISWA";
-
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
-            this.label2.Location = new System.Drawing.Point(12, 107);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 26);
-            this.label2.TabIndex = 138;
-            this.label2.Text = "DATA DIRI";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
-            this.label3.Location = new System.Drawing.Point(20, 140);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 26);
-            this.label3.TabIndex = 128;
-            this.label3.Text = "jenis kelamin";
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
+            this.label18.Location = new System.Drawing.Point(439, 102);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(71, 26);
+            this.label18.TabIndex = 133;
+            this.label18.Text = "Kelas";
             // 
             // panel2
             // 
@@ -457,6 +306,189 @@ namespace fakhiraa1
             this.label12.Size = new System.Drawing.Size(73, 26);
             this.label12.TabIndex = 119;
             this.label12.Text = "NISN";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
+            this.label3.Location = new System.Drawing.Point(20, 140);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(147, 26);
+            this.label3.TabIndex = 128;
+            this.label3.Text = "jenis kelamin";
+            // 
+            // txtalamat
+            // 
+            this.txtalamat.BorderRadius = 15;
+            this.txtalamat.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtalamat.DefaultText = "";
+            this.txtalamat.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtalamat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtalamat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtalamat.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtalamat.Enabled = false;
+            this.txtalamat.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtalamat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtalamat.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtalamat.Location = new System.Drawing.Point(570, 20);
+            this.txtalamat.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtalamat.Name = "txtalamat";
+            this.txtalamat.PlaceholderText = "";
+            this.txtalamat.SelectedText = "";
+            this.txtalamat.Size = new System.Drawing.Size(202, 43);
+            this.txtalamat.TabIndex = 124;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
+            this.label10.Location = new System.Drawing.Point(436, 27);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 26);
+            this.label10.TabIndex = 125;
+            this.label10.Text = "Alamat";
+            // 
+            // txtnohp
+            // 
+            this.txtnohp.BorderRadius = 15;
+            this.txtnohp.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtnohp.DefaultText = "";
+            this.txtnohp.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtnohp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtnohp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtnohp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtnohp.Enabled = false;
+            this.txtnohp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtnohp.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtnohp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtnohp.Location = new System.Drawing.Point(170, 198);
+            this.txtnohp.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtnohp.Name = "txtnohp";
+            this.txtnohp.PlaceholderText = "";
+            this.txtnohp.SelectedText = "";
+            this.txtnohp.Size = new System.Drawing.Size(202, 43);
+            this.txtnohp.TabIndex = 122;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
+            this.label8.Location = new System.Drawing.Point(20, 205);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(114, 26);
+            this.label8.TabIndex = 123;
+            this.label8.Text = "no telepon";
+            // 
+            // txtjk
+            // 
+            this.txtjk.BorderRadius = 15;
+            this.txtjk.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtjk.DefaultText = "";
+            this.txtjk.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtjk.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtjk.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtjk.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtjk.Enabled = false;
+            this.txtjk.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtjk.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtjk.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtjk.Location = new System.Drawing.Point(171, 140);
+            this.txtjk.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtjk.Name = "txtjk";
+            this.txtjk.PlaceholderText = "";
+            this.txtjk.SelectedText = "";
+            this.txtjk.Size = new System.Drawing.Size(202, 43);
+            this.txtjk.TabIndex = 120;
+            // 
+            // txtnama
+            // 
+            this.txtnama.BorderRadius = 15;
+            this.txtnama.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtnama.DefaultText = "";
+            this.txtnama.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtnama.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtnama.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtnama.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtnama.Enabled = false;
+            this.txtnama.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtnama.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtnama.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtnama.Location = new System.Drawing.Point(171, 80);
+            this.txtnama.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtnama.Name = "txtnama";
+            this.txtnama.PlaceholderText = "";
+            this.txtnama.SelectedText = "";
+            this.txtnama.Size = new System.Drawing.Size(202, 43);
+            this.txtnama.TabIndex = 120;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
+            this.label6.Location = new System.Drawing.Point(13, 84);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(157, 26);
+            this.label6.TabIndex = 121;
+            this.label6.Text = "Nama lengkap";
+            // 
+            // txtnisn
+            // 
+            this.txtnisn.BorderRadius = 15;
+            this.txtnisn.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtnisn.DefaultText = "";
+            this.txtnisn.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtnisn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtnisn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtnisn.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtnisn.Enabled = false;
+            this.txtnisn.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtnisn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtnisn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtnisn.Location = new System.Drawing.Point(171, 21);
+            this.txtnisn.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtnisn.Name = "txtnisn";
+            this.txtnisn.PlaceholderText = "";
+            this.txtnisn.SelectedText = "";
+            this.txtnisn.Size = new System.Drawing.Size(202, 43);
+            this.txtnisn.TabIndex = 119;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
+            this.label5.Location = new System.Drawing.Point(12, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 26);
+            this.label5.TabIndex = 119;
+            this.label5.Text = "NISN";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
+            this.label1.Location = new System.Drawing.Point(371, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(190, 26);
+            this.label1.TabIndex = 137;
+            this.label1.Text = "PROFIL SISWA";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
+            this.label2.Location = new System.Drawing.Point(12, 107);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 26);
+            this.label2.TabIndex = 138;
+            this.label2.Text = "DATA DIRI";
             // 
             // panel3
             // 
@@ -721,38 +753,6 @@ namespace fakhiraa1
             this.label23.Size = new System.Drawing.Size(225, 26);
             this.label23.TabIndex = 139;
             this.label23.Text = "UBAH PASSWORD";
-            // 
-            // txtkelas
-            // 
-            this.txtkelas.BorderRadius = 15;
-            this.txtkelas.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtkelas.DefaultText = "";
-            this.txtkelas.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtkelas.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtkelas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtkelas.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtkelas.Enabled = false;
-            this.txtkelas.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtkelas.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtkelas.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtkelas.Location = new System.Drawing.Point(573, 95);
-            this.txtkelas.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.txtkelas.Name = "txtkelas";
-            this.txtkelas.PlaceholderText = "";
-            this.txtkelas.SelectedText = "";
-            this.txtkelas.Size = new System.Drawing.Size(202, 43);
-            this.txtkelas.TabIndex = 132;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
-            this.label18.Location = new System.Drawing.Point(439, 102);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(71, 26);
-            this.label18.TabIndex = 133;
-            this.label18.Text = "Kelas";
             // 
             // Fprofil
             // 
