@@ -368,6 +368,7 @@ namespace fakhiraa1
             this.btncetak.Size = new System.Drawing.Size(256, 45);
             this.btncetak.TabIndex = 130;
             this.btncetak.Text = "cetak laporan";
+        
             // 
             // Flaporan
             // 

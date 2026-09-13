@@ -12,9 +12,18 @@ namespace fakhiraa1
 {
     public partial class dashboardsiswa : Form
     {
+        private int idAnggotaLogin;
+
         public dashboardsiswa()
         {
             InitializeComponent();
+        }
+
+        // Constructor penerima ID siswa dari Form1
+        public dashboardsiswa(int idAnggota)
+        {
+            InitializeComponent();
+            this.idAnggotaLogin = idAnggota;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -37,7 +46,8 @@ namespace fakhiraa1
 
         private void label3_Click(object sender, EventArgs e)
         {
-            Fpeminjamansiswa fakhira = new Fpeminjamansiswa { TopLevel = false, TopMost = true };
+            // Mengirimkan idAnggotaLogin ke Form Peminjaman
+            Fpeminjamansiswa fakhira = new Fpeminjamansiswa() { TopLevel = false, TopMost = true };
             KFPERPUS.untukform(fakhira, panel3);
         }
 
@@ -52,4 +62,4 @@ namespace fakhiraa1
 
         }
     }
-    }
+}

@@ -9,11 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace fakhiraa1
 {
     public partial class Form1 : Form
     {
+        // Variabel static untuk menyimpan ID Anggota yang sedang login
+        public static int idAnggotaLogin = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -45,11 +47,11 @@ namespace fakhiraa1
             return sb.ToString();
         }
 
-
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             string pass = MD5Hash(TXTPASS.Text);
 
+            // 1. Ambil data user dari tuser berdasarkan username & password
             db.crud($"SELECT * FROM tuser WHERE username = '{TXTUSER.Text}' AND password = '{pass}'");
 
             int cekjumlahbaris = db.ds.Tables[0].Rows.Count;
@@ -57,6 +59,7 @@ namespace fakhiraa1
             if (cekjumlahbaris == 1)
             {
                 int role = Convert.ToInt32(db.ds.Tables[0].Rows[0]["id_role"]);
+                int idUser = Convert.ToInt32(db.ds.Tables[0].Rows[0]["id"]);
 
                 if (role == 1)
                 {
@@ -66,6 +69,26 @@ namespace fakhiraa1
                 }
                 else if (role == 2)
                 {
+                    try
+                    {
+                        // 2. Cari id_anggota di tabel t_anggota berdasarkan id_user
+                        db.crud($"SELECT id_anggota FROM t_anggota WHERE id_user = '{idUser}'");
+
+                        if (db.ds != null && db.ds.Tables.Count > 0 && db.ds.Tables[0].Rows.Count > 0)
+                        {
+                            idAnggotaLogin = Convert.ToInt32(db.ds.Tables[0].Rows[0]["id_anggota"]);
+                        }
+                        else
+                        {
+                            idAnggotaLogin = idUser;
+                        }
+                    }
+                    catch
+                    {
+                        // Fallback jika terjadi kendala struktur kolom
+                        idAnggotaLogin = idUser;
+                    }
+
                     dashboardsiswa user = new dashboardsiswa();
                     user.Show();
                     this.Hide();
@@ -75,113 +98,6 @@ namespace fakhiraa1
             {
                 MessageBox.Show("Username / Password salah");
             }
-
-
-        }
-
-        private void TXTPASS_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2PictureBox6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2PictureBox5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2PictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2PictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2PictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TXTUSER_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
