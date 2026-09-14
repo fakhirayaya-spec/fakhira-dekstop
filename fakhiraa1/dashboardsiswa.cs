@@ -53,8 +53,15 @@ namespace fakhiraa1
 
         private void label5_Click(object sender, EventArgs e)
         {
-            Fprofil fakhira = new Fprofil { TopLevel = false, TopMost = true };
-            KFPERPUS.untukform(fakhira, panel3);
+            Fprofil formProfil = new Fprofil();
+            formProfil.TopLevel = false;
+            formProfil.FormBorderStyle = FormBorderStyle.None;
+            formProfil.Dock = DockStyle.Fill;
+
+            panel3.Controls.Clear(); // Ganti panelKonten dengan nama Panel tempat Form dipasang
+            panel3.Controls.Add(formProfil);
+
+            formProfil.Show();
         }
 
         private void label4_Click(object sender, EventArgs e)

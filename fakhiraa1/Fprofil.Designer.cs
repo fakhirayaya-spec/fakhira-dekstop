@@ -56,6 +56,9 @@ namespace fakhiraa1
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnsimpan = new Guna.UI2.WinForms.Guna2Button();
+            this.txtkonfir = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -93,7 +96,7 @@ namespace fakhiraa1
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtnisn);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(8, 136);
+            this.panel1.Location = new System.Drawing.Point(8, 86);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1008, 252);
             this.panel1.TabIndex = 130;
@@ -115,6 +118,7 @@ namespace fakhiraa1
             this.txtkelas.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtkelas.Name = "txtkelas";
             this.txtkelas.PlaceholderText = "";
+            this.txtkelas.ReadOnly = true;
             this.txtkelas.SelectedText = "";
             this.txtkelas.Size = new System.Drawing.Size(202, 43);
             this.txtkelas.TabIndex = 132;
@@ -335,6 +339,7 @@ namespace fakhiraa1
             this.txtalamat.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtalamat.Name = "txtalamat";
             this.txtalamat.PlaceholderText = "";
+            this.txtalamat.ReadOnly = true;
             this.txtalamat.SelectedText = "";
             this.txtalamat.Size = new System.Drawing.Size(202, 43);
             this.txtalamat.TabIndex = 124;
@@ -367,6 +372,7 @@ namespace fakhiraa1
             this.txtnohp.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtnohp.Name = "txtnohp";
             this.txtnohp.PlaceholderText = "";
+            this.txtnohp.ReadOnly = true;
             this.txtnohp.SelectedText = "";
             this.txtnohp.Size = new System.Drawing.Size(202, 43);
             this.txtnohp.TabIndex = 122;
@@ -399,6 +405,7 @@ namespace fakhiraa1
             this.txtjk.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtjk.Name = "txtjk";
             this.txtjk.PlaceholderText = "";
+            this.txtjk.ReadOnly = true;
             this.txtjk.SelectedText = "";
             this.txtjk.Size = new System.Drawing.Size(202, 43);
             this.txtjk.TabIndex = 120;
@@ -420,6 +427,7 @@ namespace fakhiraa1
             this.txtnama.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtnama.Name = "txtnama";
             this.txtnama.PlaceholderText = "";
+            this.txtnama.ReadOnly = true;
             this.txtnama.SelectedText = "";
             this.txtnama.Size = new System.Drawing.Size(202, 43);
             this.txtnama.TabIndex = 120;
@@ -452,6 +460,7 @@ namespace fakhiraa1
             this.txtnisn.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtnisn.Name = "txtnisn";
             this.txtnisn.PlaceholderText = "";
+            this.txtnisn.ReadOnly = true;
             this.txtnisn.SelectedText = "";
             this.txtnisn.Size = new System.Drawing.Size(202, 43);
             this.txtnisn.TabIndex = 119;
@@ -477,14 +486,13 @@ namespace fakhiraa1
             this.label1.Size = new System.Drawing.Size(190, 26);
             this.label1.TabIndex = 137;
             this.label1.Text = "PROFIL SISWA";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
-            this.label2.Location = new System.Drawing.Point(12, 107);
+            this.label2.Location = new System.Drawing.Point(12, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 26);
             this.label2.TabIndex = 138;
@@ -492,15 +500,66 @@ namespace fakhiraa1
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnsimpan);
+            this.panel3.Controls.Add(this.txtkonfir);
+            this.panel3.Controls.Add(this.label20);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.txtpassbaru);
             this.panel3.Controls.Add(this.label19);
             this.panel3.Controls.Add(this.txtpasslama);
             this.panel3.Controls.Add(this.label22);
-            this.panel3.Location = new System.Drawing.Point(19, 445);
+            this.panel3.Location = new System.Drawing.Point(19, 385);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1008, 163);
+            this.panel3.Size = new System.Drawing.Size(1008, 223);
             this.panel3.TabIndex = 132;
+            // 
+            // btnsimpan
+            // 
+            this.btnsimpan.BorderRadius = 15;
+            this.btnsimpan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnsimpan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnsimpan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnsimpan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnsimpan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
+            this.btnsimpan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnsimpan.ForeColor = System.Drawing.Color.White;
+            this.btnsimpan.Location = new System.Drawing.Point(751, 157);
+            this.btnsimpan.Name = "btnsimpan";
+            this.btnsimpan.Size = new System.Drawing.Size(183, 45);
+            this.btnsimpan.TabIndex = 134;
+            this.btnsimpan.Text = "Simpan";
+            this.btnsimpan.Click += new System.EventHandler(this.btnsimpan_Click_2);
+            // 
+            // txtkonfir
+            // 
+            this.txtkonfir.BorderRadius = 15;
+            this.txtkonfir.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtkonfir.DefaultText = "";
+            this.txtkonfir.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtkonfir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtkonfir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtkonfir.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtkonfir.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtkonfir.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtkonfir.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtkonfir.Location = new System.Drawing.Point(266, 172);
+            this.txtkonfir.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtkonfir.Name = "txtkonfir";
+            this.txtkonfir.PlaceholderText = "";
+            this.txtkonfir.SelectedText = "";
+            this.txtkonfir.Size = new System.Drawing.Size(357, 43);
+            this.txtkonfir.TabIndex = 133;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
+            this.label20.Location = new System.Drawing.Point(332, 130);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(219, 26);
+            this.label20.TabIndex = 132;
+            this.label20.Text = "konfirmasi password";
             // 
             // panel4
             // 
@@ -688,7 +747,6 @@ namespace fakhiraa1
             this.txtpassbaru.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtpassbaru.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtpassbaru.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtpassbaru.Enabled = false;
             this.txtpassbaru.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtpassbaru.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtpassbaru.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -720,7 +778,6 @@ namespace fakhiraa1
             this.txtpasslama.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtpasslama.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtpasslama.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtpasslama.Enabled = false;
             this.txtpasslama.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtpasslama.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtpasslama.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -748,7 +805,7 @@ namespace fakhiraa1
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Elephant", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(72)))), ((int)(((byte)(60)))));
-            this.label23.Location = new System.Drawing.Point(21, 416);
+            this.label23.Location = new System.Drawing.Point(21, 356);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(225, 26);
             this.label23.TabIndex = 139;
@@ -824,5 +881,8 @@ namespace fakhiraa1
         private System.Windows.Forms.Label label23;
         private Guna.UI2.WinForms.Guna2TextBox txtkelas;
         private System.Windows.Forms.Label label18;
+        private Guna.UI2.WinForms.Guna2TextBox txtkonfir;
+        private System.Windows.Forms.Label label20;
+        private Guna.UI2.WinForms.Guna2Button btnsimpan;
     }
 }
