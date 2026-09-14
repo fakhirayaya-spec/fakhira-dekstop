@@ -90,7 +90,6 @@ namespace fakhiraa1
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(590, 578);
             this.guna2Panel1.TabIndex = 0;
-          
             // 
             // label12
             // 
@@ -279,7 +278,7 @@ namespace fakhiraa1
             this.guna2Button1.Size = new System.Drawing.Size(336, 45);
             this.guna2Button1.TabIndex = 2;
             this.guna2Button1.Text = "LOGIN";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
             // 
             // TXTPASS
             // 
