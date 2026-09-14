@@ -258,7 +258,7 @@ namespace fakhiraa1
             this.label2.Size = new System.Drawing.Size(57, 26);
             this.label2.TabIndex = 132;
             this.label2.Text = "Cari";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+           
             // 
             // dataGridView1
             // 
@@ -339,6 +339,7 @@ namespace fakhiraa1
             this.txtcari.SelectedText = "";
             this.txtcari.Size = new System.Drawing.Size(263, 43);
             this.txtcari.TabIndex = 126;
+            this.txtcari.TextChanged += new System.EventHandler(this.txtcari_TextChanged_1);
             // 
             // Fpeminjamansiswa
             // 
@@ -354,6 +355,7 @@ namespace fakhiraa1
             this.Controls.Add(this.label2);
             this.Name = "Fpeminjamansiswa";
             this.Text = "Fpeminjamansiswa";
+            this.Load += new System.EventHandler(this.Fpeminjamansiswa_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

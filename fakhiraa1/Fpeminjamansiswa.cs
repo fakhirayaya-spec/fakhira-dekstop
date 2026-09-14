@@ -17,6 +17,9 @@ namespace fakhiraa1
             Form1.idAnggotaLogin = id;
         }
 
+        // =========================================================
+        // EVENT LOAD (OTOMATIS JALAN SAAT FORM DIBUKA)
+        // =========================================================
         private void Fpeminjamansiswa_Load(object sender, EventArgs e)
         {
             kunciTextBoxDetail();
@@ -28,11 +31,11 @@ namespace fakhiraa1
         // =========================================================
         private void kunciTextBoxDetail()
         {
-            txtjudul.ReadOnly = true;
-            txttglpinjam.ReadOnly = true;
-            txttglkembali.ReadOnly = true;
-            txtdenda.ReadOnly = true;
-            txtstatus.ReadOnly = true;
+            if (txtjudul != null) txtjudul.ReadOnly = true;
+            if (txttglpinjam != null) txttglpinjam.ReadOnly = true;
+            if (txttglkembali != null) txttglkembali.ReadOnly = true;
+            if (txtdenda != null) txtdenda.ReadOnly = true;
+            if (txtstatus != null) txtstatus.ReadOnly = true;
         }
 
         // =========================================================
@@ -44,7 +47,9 @@ namespace fakhiraa1
 
             dataGridView1.Rows.Clear();
 
-            // Query Utama
+            int idLogin = Form1.idAnggotaLogin;
+
+            // Query diperbaiki: Menggunakan p.id_anggota saja
             string query = $@"
         SELECT 
             p.id_pinjam,
@@ -54,14 +59,13 @@ namespace fakhiraa1
             p.tanggal_jatuh_tempo AS tenggat_kembali,
             pg.tanggal_kembali AS tgl_kembali,
             p.status,
-            IFNULL(d.jumlah_bayar, IFNULL(pg.denda, 0)) AS denda
+            IFNULL(pg.denda, 0) AS denda
         FROM t_peminjaman p
-        LEFT JOIN t_buku b ON p.id_buku = b.id_buku OR p.buku = b.id_buku
+        LEFT JOIN t_buku b ON p.id_buku = b.id_buku
         LEFT JOIN t_pengembalian pg ON p.id_pinjam = pg.id_pinjam
-        LEFT JOIN t_denda d ON p.id_pinjam = d.id_pinjam
-        WHERE (p.id_anggota = '{Form1.idAnggotaLogin}' OR p.anggota = '{Form1.idAnggotaLogin}')";
+        WHERE p.id_anggota = '{idLogin}'";
 
-            // Filter Pencarian (Hanya aktif jika txtcari diisi)
+            // Filter Pencarian jika txtcari diisi
             if (txtcari != null && !string.IsNullOrWhiteSpace(txtcari.Text))
             {
                 string cari = txtcari.Text.Trim().Replace("'", "''");
@@ -118,7 +122,7 @@ namespace fakhiraa1
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Gagal memuat data: " + ex.Message);
+                MessageBox.Show("Gagal memuat data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -132,47 +136,46 @@ namespace fakhiraa1
 
             DataRow baris = (DataRow)dataGridView1.CurrentRow.Tag;
 
-            // Judul Buku
-            txtjudul.Text = baris["judul"].ToString();
+            if (txtjudul != null) txtjudul.Text = baris["judul"].ToString();
 
-            // Tanggal Pinjam
-            if (baris["tgl_pinjam"] != DBNull.Value)
+            if (txttglpinjam != null)
             {
-                txttglpinjam.Text = Convert.ToDateTime(baris["tgl_pinjam"]).ToString("dd/MM/yyyy");
-            }
-            else
-            {
-                txttglpinjam.Text = "-";
+                txttglpinjam.Text = (baris["tgl_pinjam"] != DBNull.Value)
+                    ? Convert.ToDateTime(baris["tgl_pinjam"]).ToString("dd/MM/yyyy")
+                    : "-";
             }
 
-            // Tanggal Kembali (Menampilkan tanggal pengembalian jika ada, atau tenggat kembali)
-            if (baris["tgl_kembali"] != DBNull.Value && !string.IsNullOrWhiteSpace(baris["tgl_kembali"].ToString()))
+            if (txttglkembali != null)
             {
-                txttglkembali.Text = Convert.ToDateTime(baris["tgl_kembali"]).ToString("dd/MM/yyyy");
-            }
-            else if (baris["tenggat_kembali"] != DBNull.Value)
-            {
-                txttglkembali.Text = Convert.ToDateTime(baris["tenggat_kembali"]).ToString("dd/MM/yyyy");
-            }
-            else
-            {
-                txttglkembali.Text = "-";
+                if (baris["tgl_kembali"] != DBNull.Value && !string.IsNullOrWhiteSpace(baris["tgl_kembali"].ToString()))
+                {
+                    txttglkembali.Text = Convert.ToDateTime(baris["tgl_kembali"]).ToString("dd/MM/yyyy");
+                }
+                else if (baris["tenggat_kembali"] != DBNull.Value)
+                {
+                    txttglkembali.Text = Convert.ToDateTime(baris["tenggat_kembali"]).ToString("dd/MM/yyyy");
+                }
+                else
+                {
+                    txttglkembali.Text = "-";
+                }
             }
 
-            // Status
-            txtstatus.Text = baris["status"].ToString();
+            if (txtstatus != null) txtstatus.Text = baris["status"].ToString();
 
-            // Denda
-            decimal nominalDenda = 0;
-            if (baris["denda"] != DBNull.Value)
+            if (txtdenda != null)
             {
-                nominalDenda = Convert.ToDecimal(baris["denda"]);
+                decimal nominalDenda = 0;
+                if (baris["denda"] != DBNull.Value)
+                {
+                    nominalDenda = Convert.ToDecimal(baris["denda"]);
+                }
+                txtdenda.Text = nominalDenda > 0 ? "Rp " + nominalDenda.ToString("N0") : "Rp 0";
             }
-            txtdenda.Text = nominalDenda > 0 ? "Rp " + nominalDenda.ToString("N0") : "Rp 0";
         }
 
         // =========================================================
-        // EVENT HANDLER
+        // EVENT HANDLER DARI DESIGNER
         // =========================================================
         private void txtcari_TextChanged(object sender, EventArgs e)
         {
@@ -192,9 +195,9 @@ namespace fakhiraa1
             isiDetailPinjaman();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+        // Handler cadangan agar tidak error jika event terduplikasi di Designer
+        private void Fpeminjamansiswa_Load_1(object sender, EventArgs e) { Fpeminjamansiswa_Load(sender, e); }
+        private void txtcari_TextChanged_1(object sender, EventArgs e) { txtcari_TextChanged(sender, e); }
+        private void label2_Click(object sender, EventArgs e) { }
     }
 }

@@ -61,5 +61,29 @@ namespace fakhiraa1
         {
 
         }
+
+        private void guna2PictureBox13_Click(object sender, EventArgs e)
+        {
+            // Tampilkan konfirmasi sebelum logout
+            DialogResult result = MessageBox.Show(
+                "Apakah Anda yakin ingin keluar?",
+                "Konfirmasi Logout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                // 1. Sembunyikan form saat ini (Form Main / Admin)
+                this.Hide();
+
+                // 2. Buka kembali Form Login
+                Form1 formLogin = new Form1();
+                formLogin.ShowDialog();
+
+                // 3. Tutup form utama secara permanen setelah Form Login ditutup
+                this.Close();
+            }
+        }
     }
 }
